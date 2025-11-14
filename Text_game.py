@@ -55,20 +55,25 @@ while True:
 if not choice:
         print("\"GAME OVER\"\nYou got swept away by the river")
 elif choice:
-    boat = input("He gives you a boat\n     Press \"W\" to continue\n>> ").lower()
+    boat = input("He gives you a boat\n     Press \"W\" to continue or \"s\" to go back\n>> ").lower()
     choices = True
-    if boat == "w":
+    if boat == "s":
+        print("\nYou went home.")
+        print("\"SAFE ENDING\"")
+    elif boat == "w":
         choice2 = input("There are three doors in front of you. Red, Green, and Blue, Make a choice.\n       \"R\" or \"G\" or \"B\"\n>> ").lower()
         if choice2 == "r":
-            print("You Fall into the deepest pits of Lava.")
+            print("\n**You Fall into the deepest pits of Lava**")
             choices = False
         elif choice2 == "g":
             print("\nYou got the Treasure!!!\n\"HOORAH!!!\"")
         elif choice2 == "b":
-            print("You fell into a sea full of Sharks, Ouch!")
+            print("You fell into the sea full of Sharks, Ouch!")
             choices = False
         if not choices:
-            print("\"GAME OVER\"")
+            print("\n         \"GAME OVER\"")
         if choices:
             print("\n\"Thanks for playing\"")
+    else:
+        print("\nInvalid Choice!\n  *Try Again*\n")
 
