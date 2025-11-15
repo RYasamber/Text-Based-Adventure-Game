@@ -46,7 +46,8 @@ scissors = '''
       (____)
 ---.__(___)
 '''
-
+g_i = [rock, paper, scissors]
+print("\"please play in full terminal screen for better experience!\"\n")
 print("Welcome to Treasure Island.")
 print("Your mission is to find the treasure.")
 print("If any button is pressed wrong, You will restart from the beginning.\n")
@@ -61,8 +62,30 @@ while True:
                 choice = False
                 break
             else:
-                if random.random() < 0.3:
-                    continue
+                if random.random() < 0.7:
+                    print("\nA light appears from the sky!\n")
+                    u_input = int(input("A mysterious force wants to play rock paper scissors with you.\n       Type \"0\" for Rock, \"1\" for Paper, and \"2\" for Scissors\n>> "))
+                    if u_input >= 0 or u_input < 3:
+                        print(f"You chose : {g_i[u_input]}")   
+                    c_input = random.randint(0,2)
+                    if u_input > 2 and u_input < 0:
+                        print("\nTrying to be smart? \n*The being frowns*\n")
+                        choice = False
+                        break
+                    elif u_input < c_input or u_input == 2 and c_input == 0:
+                        print(f"The being chose : {g_i[c_input]}\nYou lost! \n*The force is dissapointed*")
+                        choice = False
+                        break
+                    elif u_input > c_input or u_input == 0 and c_input == 2:
+                        print(f"The being chose : {g_i[c_input]}\nYou won! \n*The force is pleased and sends you to the castle shore*\n")
+                        break
+                    elif u_input == c_input:
+                        print(f"The being chose : {g_i[c_input]}\nIt's a tie! \n*The force is confused so he lets you regress*\n")
+                        continue
+                    else:
+                        print("\nInvalid Choice!\n  *Try Again*\n")
+                        choice = False
+                        break
                 else:
                     choice = False
                     break
@@ -78,7 +101,7 @@ while True:
         else:
             continue
 if not choice:
-        print("\"GAME OVER\"\nYou got swept away by the river")
+        print("     \"GAME OVER\"\n*You got swept away by the river*")
 elif choice:
     boat = input("He gives you a boat\n     Press \"W\" to continue or \"s\" to go back\n>> ").lower()
     choices = True
@@ -93,7 +116,7 @@ elif choice:
         elif choice2 == "g":
             print("\nYou got the Treasure!!!\n\"HOORAH!!!\"")
         elif choice2 == "b":
-            print("You fell into the sea full of Sharks, Ouch!")
+            print("\nYou fell into a sea full of Sharks, Ouch!")
             choices = False
         if not choices:
             print("\n         \"GAME OVER\"")
