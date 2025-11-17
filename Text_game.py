@@ -55,13 +55,13 @@ choice = True
 while True:
     choice1 = input("There is a crossroad in front of you.\n       Do you choose \"Right\" or \"Left\"?\n>> ").lower()
     if choice1 == "left":
-        left = input("You spot a castle but its across a huge river, What will you do?\n\"Try to Swim across\" or \"Go Back\"\n       Type \"S\" to Swim or \"B\" to go back.\n>> ").lower()
+        left = input("\nYou spot a castle but its across a huge river, What will you do?\n\"Try to Swim across\" or \"Go Back\"\n       Type \"S\" to Swim or \"B\" to go back.\n>> ").lower()
         if left == "s":
             swim = input("The force of the river is too strong, Its taking you away.\n       \"L\" to Accept you fate or \"P\" to pray to GOD\n>> ").lower()
             if swim == "l":
                 choice = False
                 break
-            else:
+            elif swim == "p":
                 if random.random() < 0.7:
                     print("\nA light appears from the sky!\n")
                     u_input = int(input("A mysterious force wants to play rock paper scissors with you.\n       Type \"0\" for Rock, \"1\" for Paper, and \"2\" for Scissors\n>> "))
@@ -94,6 +94,7 @@ while True:
         if right == "a":
             approach = input("The guy stares at you and asks you for a body part.\n       \"E\" to give him your \"Eyes\" or \"F\" to give him your \"fingers\" or \"A\" to give him an \"Arm\" or \"N\" to refuse him.\n>> ").lower()
             if approach == "f":
+                print("\n He gives you a boat.")
                 break
             else:
                 print("*He smirks* You lost memory and You go back to the start. Restarting\n")
@@ -103,13 +104,13 @@ while True:
 if not choice:
         print("     \"GAME OVER\"\n*You got swept away by the river*")
 elif choice:
-    boat = input("He gives you a boat\n     Press \"W\" to continue or \"s\" to go back\n>> ").lower()
+    boat = input("\n*You see a pathway infront of you*\n     Press \"W\" to continue or \"s\" to go back\n>> ").lower()
     choices = True
     if boat == "s":
         print("\nYou went home.")
         print("\"SAFE ENDING\"")
     elif boat == "w":
-        choice2 = input("There are three doors in front of you. Red, Green, and Blue, Make a choice.\n       \"R\" or \"G\" or \"B\"\n>> ").lower()
+        choice2 = input("There are three doors in front of you. Red, Green, and Blue, Make a choice.\n       \"R\" for 'Red' or \"G\" for 'Green' or \"B\" for 'Blue'\n>> ").lower()
         if choice2 == "r":
             print("\n**You Fall into the deepest pits of Lava**")
             choices = False
